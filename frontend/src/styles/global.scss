@@ -1,0 +1,100 @@
+@use './variables' as *;
+@use './mixins' as *;
+@use './element-override' as *;
+
+// 全局基础样式
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #app {
+  height: 100%;
+}
+
+body {
+  color: $ink-primary;
+  font-family: $font-serif;
+  font-size: 15px;
+  line-height: 1.8;
+  letter-spacing: 0.01em;
+  @include paper-texture($paper-base);
+}
+
+// Element Plus 主色调覆盖
+html {
+  --el-color-primary: #{$accent-gold};
+  --el-color-primary-light-3: #{$accent-gold-light};
+  --el-color-primary-light-5: #c9a84c;
+  --el-color-primary-light-7: #dbbf73;
+  --el-color-primary-light-8: #e8d5a0;
+  --el-color-primary-light-9: #f5edd4;
+  --el-color-primary-dark-2: #8b6914;
+
+  --el-font-family: #{$font-serif};
+  --el-bg-color: #{$paper-base};
+  --el-bg-color-page: #{$paper-base};
+  --el-text-color-primary: #{$ink-primary};
+  --el-text-color-regular: #{$ink-secondary};
+  --el-text-color-secondary: #{$ink-tertiary};
+  --el-border-color: #{$border-light};
+  --el-border-color-light: #{$border-light};
+  --el-border-color-lighter: #{$border-light};
+  --el-fill-color: #{$paper-deep};
+  --el-fill-color-light: #{$paper-card};
+  --el-fill-color-blank: #{$paper-card};
+}
+
+// 滚动条美化
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $border-medium;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: $accent-gold;
+}
+
+// 页面过渡（覆盖 AppLayout 中的 fade）
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+// 通用工具类
+.text-serif {
+  font-family: $font-serif;
+}
+
+.text-sans {
+  font-family: $font-sans;
+}
+
+.text-mono {
+  font-family: $font-mono;
+}
+
+.paper-card {
+  @include paper-card;
+}
+
+.quote-block {
+  @include quote-block;
+}

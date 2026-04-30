@@ -1,0 +1,311 @@
+@use './variables' as *;
+
+/* ========================================
+   Element Plus 复古手稿风格覆盖
+   ======================================== */
+
+/* --- 按钮 --- */
+.el-button {
+  font-family: $font-serif;
+  letter-spacing: 0.02em;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+
+  &.el-button--primary {
+    background: $accent-gold;
+    border-color: $accent-gold;
+    box-shadow: 0 2px 0 #8b6914;
+
+    &:hover {
+      background: $accent-gold-light;
+      border-color: $accent-gold-light;
+      box-shadow: 0 3px 0 #8b6914;
+      transform: translateY(-1px);
+    }
+
+    &:active {
+      transform: translateY(1px);
+      box-shadow: 0 1px 0 #8b6914;
+    }
+  }
+
+  &:not(.el-button--primary):not(.el-button--text) {
+    background: transparent;
+    color: $ink-secondary;
+    border-color: $border-medium;
+
+    &:hover {
+      background: $paper-deep;
+      color: $ink-primary;
+      border-color: $accent-gold;
+    }
+  }
+}
+
+/* --- 卡片 --- */
+.el-card {
+  background: $paper-card;
+  border-color: $border-light;
+  border-radius: 4px;
+  box-shadow: $shadow-paper;
+  color: $ink-primary;
+
+  .el-card__header {
+    border-bottom-color: $border-light;
+    color: $ink-primary;
+    font-family: $font-serif;
+    font-weight: 600;
+    font-size: 16px;
+  }
+}
+
+/* --- 输入框 --- */
+.el-input__wrapper,
+.el-textarea__inner {
+  background: $paper-card !important;
+  box-shadow: 0 0 0 1px $border-light inset !important;
+  border-radius: 4px;
+
+  &:hover {
+    box-shadow: 0 0 0 1px $border-medium inset !important;
+  }
+}
+
+.el-input__wrapper.is-focus,
+.el-textarea__inner:focus {
+  box-shadow: 0 0 0 1px $accent-gold inset !important;
+}
+
+.el-input__inner,
+.el-textarea__inner {
+  font-family: $font-serif;
+  color: $ink-primary;
+}
+
+.el-input__inner::placeholder,
+.el-textarea__inner::placeholder {
+  color: $ink-tertiary;
+}
+
+/* --- 菜单 --- */
+.el-menu {
+  background: transparent;
+  border-right: none;
+
+  .el-menu-item {
+    color: $ink-secondary;
+    font-family: $font-serif;
+    border-radius: 4px;
+    margin: 2px 8px;
+
+    &:hover {
+      background: rgba($accent-gold, 0.06);
+      color: $ink-primary;
+    }
+
+    &.is-active {
+      background: rgba($accent-gold, 0.1);
+      color: $accent-gold;
+      font-weight: 600;
+    }
+  }
+}
+
+/* --- 标签 --- */
+.el-tag {
+  background: rgba($accent-gold, 0.08);
+  color: $accent-gold;
+  border-color: rgba($accent-gold, 0.2);
+  font-family: $font-sans;
+}
+
+/* --- 表格 --- */
+.el-table {
+  background: transparent;
+  color: $ink-primary;
+  font-family: $font-serif;
+
+  .el-table__header-wrapper th {
+    background: $paper-deep;
+    color: $ink-secondary;
+    font-family: $font-sans;
+    font-weight: 600;
+    border-bottom: 2px solid $border-medium;
+  }
+
+  .el-table__row {
+    background: transparent;
+
+    &:hover td {
+      background: rgba($accent-gold, 0.02) !important;
+    }
+  }
+
+  td {
+    border-bottom-color: $border-light;
+  }
+}
+
+/* --- 分割线 --- */
+.el-divider {
+  background-color: $border-light;
+}
+
+/* --- 弹窗 --- */
+.el-dialog {
+  background: $paper-card;
+  border-radius: 4px;
+  box-shadow: 0 8px 32px rgba(61, 43, 31, 0.12);
+
+  .el-dialog__header {
+    border-bottom: 1px solid $border-light;
+    color: $ink-primary;
+    font-family: $font-serif;
+    font-weight: 600;
+    padding: 16px 20px;
+  }
+
+  .el-dialog__body {
+    color: $ink-primary;
+    padding: 20px;
+  }
+
+  .el-dialog__footer {
+    border-top: 1px solid $border-light;
+    padding: 12px 20px;
+  }
+}
+
+/* --- 面包屑 --- */
+.el-breadcrumb__item {
+  font-family: $font-serif;
+
+  .el-breadcrumb__inner {
+    color: $ink-secondary;
+
+    &:hover {
+      color: $accent-gold;
+    }
+  }
+
+  &:last-child .el-breadcrumb__inner {
+    color: $ink-primary;
+    font-weight: 600;
+  }
+}
+
+/* --- 下拉菜单 --- */
+.el-dropdown__popper {
+  background: $paper-card !important;
+  border-color: $border-light !important;
+  box-shadow: $shadow-paper-hover;
+
+  .el-dropdown-menu {
+    background: transparent;
+  }
+
+  .el-dropdown-menu__item {
+    color: $ink-secondary;
+    font-family: $font-serif;
+
+    &:hover {
+      background: rgba($accent-gold, 0.06);
+      color: $ink-primary;
+    }
+  }
+}
+
+/* --- Message 全局覆盖 --- */
+.el-message {
+  background: $paper-card !important;
+  border: 1px solid $border-light !important;
+  box-shadow: $shadow-paper;
+  font-family: $font-serif;
+  border-radius: 4px;
+
+  &.el-message--success {
+    border-color: $accent-green !important;
+    .el-message__content { color: $accent-green; }
+  }
+
+  &.el-message--error {
+    border-color: $accent-red !important;
+    .el-message__content { color: $accent-red; }
+  }
+
+  &.el-message--warning {
+    border-color: $accent-gold !important;
+    .el-message__content { color: $accent-gold; }
+  }
+
+  .el-message__icon {
+    font-size: 18px;
+  }
+}
+
+/* --- 空状态 --- */
+.el-empty {
+  .el-empty__description {
+    color: $ink-tertiary;
+    font-family: $font-serif;
+    font-size: 14px;
+  }
+}
+
+/* --- 滑块 --- */
+.el-slider__runway {
+  background-color: $border-light;
+}
+
+.el-slider__bar {
+  background-color: $accent-gold;
+}
+
+.el-slider__button {
+  border-color: $accent-gold;
+}
+
+/* --- 折叠面板 --- */
+.el-collapse {
+  border-top-color: $border-light;
+  border-bottom-color: $border-light;
+}
+
+.el-collapse-item__header {
+  background: transparent;
+  color: $ink-primary;
+  font-family: $font-serif;
+  border-bottom-color: $border-light;
+}
+
+.el-collapse-item__wrap {
+  background: transparent;
+  border-bottom-color: $border-light;
+}
+
+/* --- 时间线 --- */
+.el-timeline-item__node {
+  background-color: $accent-gold;
+}
+
+.el-timeline-item__tail {
+  border-left-color: $border-light;
+}
+
+/* --- Alert --- */
+.el-alert {
+  &.el-alert--info {
+    background: rgba($accent-gold, 0.06);
+    color: $ink-secondary;
+    border: 1px solid rgba($accent-gold, 0.15);
+
+    .el-alert__title {
+      color: $ink-primary;
+    }
+  }
+}
+
+/* --- Loading --- */
+.el-loading-mask {
+  background: rgba($paper-base, 0.8);
+}

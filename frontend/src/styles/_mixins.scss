@@ -1,0 +1,45 @@
+@use './variables' as *;
+
+// 纸质纹理背景
+@mixin paper-texture($base-color: $paper-base) {
+  background-color: $base-color;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+}
+
+// 卡片样式
+@mixin paper-card {
+  background: $paper-card;
+  border: 1px solid $border-light;
+  border-radius: 4px;
+  box-shadow: $shadow-paper;
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+
+  &:hover {
+    box-shadow: $shadow-paper-hover;
+    transform: translateY(-1px);
+  }
+}
+
+// 引用块
+@mixin quote-block {
+  margin: 16px 0;
+  padding: 12px 16px 12px 20px;
+  background: $paper-deep;
+  border-left: 3px solid $accent-gold;
+  color: $ink-secondary;
+  font-style: italic;
+  line-height: 1.8;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -6px;
+    left: 16px;
+    width: 12px;
+    height: 12px;
+    background: $accent-gold;
+    border-radius: 50%;
+    opacity: 0.3;
+  }
+}
