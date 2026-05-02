@@ -7,7 +7,8 @@
 
 PlotAssistant 是一款面向剧情创作者的 **AI 辅助剧情树构建工具**。项目采用 Vue 3 + Spring Boot 全栈架构，支持从世界观设定到完整剧情脚本的九层 AI 生成管线，并提供基于 `@vue-flow/core` 的可视化画布，让创作者能够直观地拖拽、编辑剧情节点与分支连线。
 
-PlotAssistant剧情创作工具,在线预览地址http://163.245.210.83/。（默认演示账户:usrname：1，password：1)
+PlotAssistant剧情创作工具,在线预览地址http://163.245.210.83/
+（默认演示账户:usrname：1，password：1)
 
 ---
 
